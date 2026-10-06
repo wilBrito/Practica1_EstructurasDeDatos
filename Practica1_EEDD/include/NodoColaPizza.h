@@ -1,16 +1,20 @@
 #ifndef NODOCOLAPIZZA_H
 #define NODOCOLAPIZZA_H
 
+#include<iostream>
 
 class NodoColaPizza
 {
+    friend class Cola;
+    private:
+        NodoColaPizza *siguiente;
+        Pedido elementoPedido; // Pertenece a Pizzeria
     public:
         NodoColaPizza();
-        virtual ~NodoColaPizza();
+        NodoColaPizza(Pedido p, NodoColaPizza *sig = NULL); //Pendiente pedido
+        ~NodoColaPizza();
 
-    protected:
 
-    private:
 };
 
 #endif // NODOCOLAPIZZA_H
