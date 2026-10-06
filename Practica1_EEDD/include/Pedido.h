@@ -8,7 +8,7 @@ struct Pedido
 {
 
     int id_pedido;
-
+    //Alberto, necesito un constructor pedido vacio y otro normal con las caracteristicas del trabajo
     Pedido();
 
     string mostrarPedido();
