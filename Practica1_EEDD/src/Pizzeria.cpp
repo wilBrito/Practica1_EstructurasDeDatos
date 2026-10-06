@@ -1,11 +1,12 @@
 #include "pizzeria.h"
 
-pizzeria::pizzeria()
+Pizzeria::Pizzeria()
 {
+
     //ctor
 }
 
-pizzeria::~pizzeria()
+Pizzeria::~Pizzeria()
 {
     //dtor
 }

@@ -2,10 +2,11 @@
 #define NODOCOLAPIZZA_H
 
 #include<iostream>
+#include<Pedido.h>
 
 class NodoColaPizza
 {
-    friend class Cola;
+    friend class ColaPizza;
     private:
         NodoColaPizza *siguiente;
         Pedido elementoPedido; // Pertenece a Pizzeria

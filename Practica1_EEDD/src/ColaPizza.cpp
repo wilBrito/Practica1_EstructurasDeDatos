@@ -1,4 +1,7 @@
 #include "ColaPizza.h"
+#include<Pedido.h>
+
+#include<string>
 
 using namespace std;
 
@@ -28,9 +31,8 @@ void ColaPizza::encolar(Pedido ped){
     longitud++;
 }
 
-Pedido ColaPizza::desencolar(){
+void ColaPizza::desencolar(){
     if(!es_vacia()){
-        Pedido ped = primero->elementoPedido;
         NodoColaPizza *aux = primero;
 
         if((primero == ultimo) && (primero->siguiente == NULL)){
@@ -45,7 +47,7 @@ Pedido ColaPizza::desencolar(){
             delete(aux);
         }
         longitud--;
-        return ped;
+
     }
 }
 
@@ -53,6 +55,7 @@ Pedido ColaPizza::inicio(){
     if(!es_vacia()){
         return primero->elementoPedido;
     }
+    return Pedido(); //CUIDADO definir pedido fantasma vacio
 }
 
 
@@ -60,6 +63,7 @@ Pedido ColaPizza::fin(){
     if(!es_vacia()){
         return ultimo->elementoPedido;
     }
+    return Pedido(); //CUIDADO definir pedido fantasma vacio
 }
 
 bool ColaPizza::es_vacia(){
@@ -76,7 +80,8 @@ void ColaPizza::mostrarCola(){
     else{
         cout<<"Datos de la Cola: "<<endl;
         while(aux){
-            cout<<aux->elementoPedido<<endl;
+            aux->elementoPedido.mostrarPedido();
+            cout<<aux->elementoPedido.mostrarPedido()<<endl;
             aux = aux->siguiente;
         }
     }

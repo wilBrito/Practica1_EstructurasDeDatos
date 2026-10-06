@@ -2,6 +2,7 @@
 #define COLAPIZZA_H
 #include "NodoColaPizza.h"
 #include<iostream>
+#include<Pedido.h>
 
 class ColaPizza
 {
@@ -14,10 +15,10 @@ class ColaPizza
         ColaPizza();
         ~ColaPizza();
 
-        void encolar(Pedido);
+        void encolar(Pedido ped);
         Pedido inicio();
         Pedido fin();
-        Pedido desencolar();
+        void desencolar();
         bool es_vacia();
 
         void mostrarCola(); //No es correcto

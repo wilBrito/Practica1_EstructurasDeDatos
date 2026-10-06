@@ -2,15 +2,17 @@
 #define PIZZERIA_H
 
 
-class pizzeria
+class Pizzeria
 {
+    private:
+
     public:
-        pizzeria();
-        virtual ~pizzeria();
+        Pizzeria();
+        ~Pizzeria();
 
     protected:
 
-    private:
+
 };
 
 #endif // PIZZERIA_H

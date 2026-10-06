@@ -1,10 +1,11 @@
 #include "NodoColaPizza.h"
+#include<Pedido.h>
 
 using namespace std;
 
 NodoColaPizza::NodoColaPizza()
 {
-    elementoPedido= NULL;
+    elementoPedido= Pedido(); //CUIDADO mete un pedido no vacio del todo PROVISIONAL
     siguiente=NULL;
     //ctor
 }
@@ -12,7 +13,7 @@ NodoColaPizza::NodoColaPizza()
 NodoColaPizza::NodoColaPizza(Pedido p, NodoColaPizza *sig)
 {
     elementoPedido = p;
-    suiguiente = sig;
+    siguiente = sig;
     //ctor
 }
 
