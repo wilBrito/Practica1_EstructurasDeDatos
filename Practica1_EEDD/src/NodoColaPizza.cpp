@@ -1,5 +1,7 @@
 #include "NodoColaPizza.h"
 
+using namespace std;
+
 NodoColaPizza::NodoColaPizza()
 {
     elementoPedido= NULL;
