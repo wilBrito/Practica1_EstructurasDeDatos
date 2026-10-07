@@ -86,3 +86,18 @@ void ColaPizza::mostrarCola(){
         }
     }
 }
+
+int ColaPizza::length(){
+    NodoColaPizza *aux = primero;
+    int cont = 0;
+
+    if(es_vacia()){
+    }
+    else{
+        while(aux){
+            aux = aux ->siguiente;
+            cont++;
+        }
+    }
+    return cont;
+}

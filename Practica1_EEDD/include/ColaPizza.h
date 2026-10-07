@@ -22,6 +22,7 @@ class ColaPizza
         bool es_vacia();
 
         void mostrarCola(); //No es correcto
+        int length();
 
 
 
