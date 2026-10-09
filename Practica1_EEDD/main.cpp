@@ -21,61 +21,40 @@ int menu(){
     cin>>result;
     return result;
 }
-void mostrarPedidosRecibidos(ColaPizza colaP){
-    cout<<" ---------------------------------------------------------------------------------------------"<<endl;
-    cout<<"|Pedido      |Cliente        |Pizza          |Tamano      |Zona     |Pers       |Estado       |"<<endl;
-    cout<<" ---------------------------------------------------------------------------------------------"<<endl;
-
-    ColaPizza colaAux = colaP;
-    while(!colaAux.es_vacia()){
-
-        cout<<" ---------------------------------------------------------------------------------------------"<<endl;
-        cout<<"|"<<colaAux.inicio().id_pedido<<"      |Cliente        |Pizza          |Tamano      |Zona     |Pers       |Estado       |"<<endl;
-        cout<<" ---------------------------------------------------------------------------------------------"<<endl;
-
-        colaAux.desencolar();
-    }
-}
-
 int main()
 {
-
-    //Prueba
-
-    //Generar pedido
-    Pedido ped;
-
-    ColaPizza cola;
-/*
-    cout<< cola.es_vacia()<<endl;
-    cola.mostrarCola();
-
-
-*/
-    cola.encolar(ped);
-    cola.encolar(ped);
-/*
-    cout<< cola.es_vacia()<<endl;
-
-    cola.mostrarCola();
-*/
+    Pizzeria pizzeriaLuigi;
     cout<<"Pizzeria Lugi"<<endl;
     int n;
     do{
         n = menu();
-    }while(n<0||n>2);
 
     switch(n){
         case 1:
-            //generar N pedidos
+            int num;
+            cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+            cout<<"Cuantos pedidos desea generar?"<<endl;
+            cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+            cin>>num;
+            cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+            pizzeriaLuigi.crear_N_pedidos(num);
+            cout<<"PEDIDOS CREADOS CORRECTAMENTE"<<endl;
+            cout<<"----------------------------------------------------------------------------------------------------"<<endl;
             break;
         case 2:
-            mostrarPedidosRecibidos(cola);
+            pizzeriaLuigi.mostrar_pedidos();
             break;
         case 0:
             //salir
             break;
+        default:
+            cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+            cout<<"Opcion no valida, vuelva a seleccionar"<<endl;
+            cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+            break;
     }
+
+    }while(n!=0);
 
     return 0;
 }

@@ -7,14 +7,13 @@ using namespace std;
 struct Pedido
 {
 
-    int id_pedido;
-    //Alberto, necesito un constructor pedido vacio y otro normal con las caracteristicas del trabajo
-    Pedido();
-
-    string mostrarPedido();
-
-
-
+    string id_pedido;
+    int id_cliente;
+    string tipo_pizza;
+    string tamano;
+    string zona_reparto;
+    bool personalizada;
+    string estado;
 };
 
 #endif // PEDIDO_H

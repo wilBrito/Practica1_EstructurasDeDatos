@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1791542810 source:c:\users\chris\onedrive - geocratic sl\escritorio\eedd\practica1_estructurasdedatos\practica1_eedd\main.cpp
+	<iostream>
+	<ColaPizza.h>
+	<NodoColaPizza.h>
+	<Pedido.h>
+	<Pizzeria.h>
+
+1791463727 c:\users\chris\onedrive - geocratic sl\escritorio\eedd\practica1_estructurasdedatos\practica1_eedd\include\colapizza.h
+	"NodoColaPizza.h"
+	<iostream>
+	<Pedido.h>
+
+1791372695 c:\users\chris\onedrive - geocratic sl\escritorio\eedd\practica1_estructurasdedatos\practica1_eedd\include\nodocolapizza.h
+	<iostream>
+	<Pedido.h>
+
+1791542973 c:\users\chris\onedrive - geocratic sl\escritorio\eedd\practica1_estructurasdedatos\practica1_eedd\include\pedido.h
+	<string>
+
+1791542657 c:\users\chris\onedrive - geocratic sl\escritorio\eedd\practica1_estructurasdedatos\practica1_eedd\include\pizzeria.h
+	"ColaPizza.h"
+	"Pedido.h"
+
+1791542934 source:c:\users\chris\onedrive - geocratic sl\escritorio\eedd\practica1_estructurasdedatos\practica1_eedd\src\colapizza.cpp
+	"ColaPizza.h"
+	<Pedido.h>
+	<string>
+
+1791372695 source:c:\users\chris\onedrive - geocratic sl\escritorio\eedd\practica1_estructurasdedatos\practica1_eedd\src\nodocolapizza.cpp
+	"NodoColaPizza.h"
+	<Pedido.h>
+
+1791542973 source:c:\users\chris\onedrive - geocratic sl\escritorio\eedd\practica1_estructurasdedatos\practica1_eedd\src\pedido.cpp
+
