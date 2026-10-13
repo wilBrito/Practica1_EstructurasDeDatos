@@ -43,3 +43,27 @@ while(i<num){
 void Pizzeria::mostrar_pedidos(){
     colaPedidos.mostrarCola();
 }
+void Pizzeria::de_cocina_a_Exp(){
+    Pedido aMover=colaCocina.inicio();
+    if(aMover.zona_reparto=="NORTE"){
+            colaExpNorte.encolar(aMover);}
+    else if(aMover.zona_reparto=="SUR"){
+            colaExpSur.encolar(aMover);}
+    else if(aMover.zona_reparto=="ESTE"){
+            colaExpEste.encolar(aMover);}
+    else if(aMover.zona_reparto=="OESTE"){
+            colaExpOeste.encolar(aMover);}
+    colaCocina.desencolar();}
+void Pizzeria::de_prepEsp_a_cocina(){
+    Pedido aMover=colaPedidosEspeciales.inicio();
+    colaCocina.encolar(aMover);
+    colaPedidosEspeciales.desencolar();}
+void Pizzeria::de_recibido_a_cocina_o_prepEsp(){
+    Pedido aMover=colaPedidos.inicio();
+    if(aMover.personalizada){
+        colaPedidosEspeciales.encolar(aMover);
+    }
+    else{
+        colaCocina.encolar(aMover);
+    }
+    colaPedidos.desencolar();}

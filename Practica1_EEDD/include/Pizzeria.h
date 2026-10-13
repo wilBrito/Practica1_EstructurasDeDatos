@@ -9,12 +9,22 @@ class Pizzeria
 {
     private:
         ColaPizza colaPedidos;
+        ColaPizza colaPedidosEspeciales;
+        ColaPizza colaCocina;
+        ColaPizza colaExpNorte;
+        ColaPizza colaExpSur;
+        ColaPizza colaExpEste;
+        ColaPizza colaExpOeste;
         int idcontado;
+        void de_cocina_a_Exp();
+        void de_prepEsp_a_cocina();
+        void de_recibido_a_cocina_o_prepEsp();
     public:
         Pizzeria();
         ~Pizzeria();
         void crear_N_pedidos(int num);
         void mostrar_pedidos();
+        void N_Pedidos_Paso(int pasos);
 
     protected:
 };
