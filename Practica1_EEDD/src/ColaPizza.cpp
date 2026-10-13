@@ -73,6 +73,7 @@ bool ColaPizza::es_vacia(){
 
 //No es correcto
 void ColaPizza::mostrarCola(){
+
     NodoColaPizza *aux=primero;
     if(es_vacia()){
         cout<<"----------------------------------------------------------------------------------------------------"<<endl;
