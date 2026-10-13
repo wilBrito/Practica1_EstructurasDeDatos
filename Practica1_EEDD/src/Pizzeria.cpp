@@ -97,5 +97,10 @@ void Pizzeria::N_Pedidos_Paso(){
     while(!colaPedidos.es_vacia()){
         de_recibido_a_cocina_o_prepEsp();
     }
+    if(colaCocina.es_vacia() && colaPedidos.es_vacia() && colaPedidosEspeciales.es_vacia()){
+        cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+        cout<<"NO HAY MAS PASOS QUE DAR"<<endl;
+        cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+    }
 
 }
