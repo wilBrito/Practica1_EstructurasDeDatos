@@ -76,16 +76,22 @@ void ColaPizza::mostrarCola(){
 
     NodoColaPizza *aux=primero;
     if(es_vacia()){
-        cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+     /*   cout<<"----------------------------------------------------------------------------------------------------"<<endl;
         cout<<"Cola sin pedidos"<<endl;
-        cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+        cout<<"----------------------------------------------------------------------------------------------------"<<endl;*/
     }
     else{
+        bool interfazAux = true;
         cout<<"----------------------------------------------------------------------------------------------------"<<endl;
-        cout<<"Datos de la Cola de pedidos: "<<endl;
+        cout<<"Datos del Sistema: "<<endl;
         cout<<"----------------------------------------------------------------------------------------------------"<<endl;
         while(aux){
             Pedido pedidoact=aux->elementoPedido;
+            if(interfazAux){
+                cout<<pedidoact.estado<<":"<<endl;
+                cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+                interfazAux = false;
+            }
             cout<<"ID DEL PEDIDO :"<<pedidoact.id_pedido<<"\t"<<"ID DEL CLIENTE: "<<to_string(pedidoact.id_cliente)<<"\t"<<"TIPO: "<<pedidoact.tipo_pizza<<endl;
             cout<<"TAMANO DE LA PIZZA:"<<pedidoact.tamano<<"\t"<<"ZONA DE REPARTO: "<<pedidoact.zona_reparto<<"\t"<<"PERSONALIZADA: "<<pedidoact.personalizada<<endl;
             cout<<"ESTADO: "<<pedidoact.estado<<endl;
