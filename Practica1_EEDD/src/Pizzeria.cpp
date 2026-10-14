@@ -86,21 +86,34 @@ void Pizzeria::de_recibido_a_cocina_o_prepEsp(){
     colaPedidos.desencolar();
 }
 
-void Pizzeria::N_Pedidos_Paso(){
-
-    while(!colaCocina.es_vacia()){
+void Pizzeria::N_Pedidos_Paso(int pasos){
+    if(pasos<0){
+        cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+        cout<< "NO SE PUEDEN DAR PASOS NEGATIVOS"<<endl;
+        cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+    }
+    else{
+    int i=0;
+    while(!colaCocina.es_vacia()&&i<pasos){
         de_cocina_a_Exp();
+        i++;
     }
-    while(!colaPedidosEspeciales.es_vacia()){
+    while(!colaPedidosEspeciales.es_vacia()&&i<pasos){
         de_prepEsp_a_cocina();
+        i++;
     }
-    while(!colaPedidos.es_vacia()){
+    while(!colaPedidos.es_vacia()&&i<pasos){
         de_recibido_a_cocina_o_prepEsp();
+        i++;
     }
-    if(colaCocina.es_vacia() && colaPedidos.es_vacia() && colaPedidosEspeciales.es_vacia()){
+    if(i<pasos){
         cout<<"----------------------------------------------------------------------------------------------------"<<endl;
-        cout<<"NO HAY MAS PASOS QUE DAR"<<endl;
+        cout<<"NO SE HA PODIDO REALIZAR "<<pasos<<" PASOS, SE HAN REALIZADO "<< i <<" PASOS EN TOTAL"<<endl;
+        cout<<"----------------------------------------------------------------------------------------------------"<<endl;}
+    else{
+        cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+        cout<<"TODOS LOS PASOS REALIZADOS"<<endl;
         cout<<"----------------------------------------------------------------------------------------------------"<<endl;
     }
+    }}
 
-}

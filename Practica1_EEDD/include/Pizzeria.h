@@ -24,7 +24,7 @@ class Pizzeria
         ~Pizzeria();
         void crear_N_pedidos(int num);
         void mostrar_pedidos();
-        void N_Pedidos_Paso();
+        void N_Pedidos_Paso(int pasos);
 
     protected:
 };

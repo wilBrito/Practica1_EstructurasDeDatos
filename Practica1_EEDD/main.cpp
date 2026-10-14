@@ -44,10 +44,13 @@ int main()
             cout<<"----------------------------------------------------------------------------------------------------"<<endl;
             break;
         case 2:
+            int pasos;
             cout<<"----------------------------------------------------------------------------------------------------"<<endl;
-            pizzeriaLuigi.N_Pedidos_Paso();
-            cout<<"PASO EJECUTADO CORRECTAMENTE"<<endl;
+            cout<<"Cuantos pasos desea dar?"<<endl;
             cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+            cin>>pasos;
+            cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+            pizzeriaLuigi.N_Pedidos_Paso(pasos);
             break;
         case 3:
             pizzeriaLuigi.mostrar_pedidos();
