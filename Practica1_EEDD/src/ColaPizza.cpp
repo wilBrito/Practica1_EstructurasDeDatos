@@ -13,10 +13,7 @@ ColaPizza::ColaPizza()
     //ctor
 }
 
-ColaPizza::~ColaPizza()
-{
-    //dtor
-}
+
 
 void ColaPizza::encolar(Pedido ped){
     NodoColaPizza *nuevo_nodo = new NodoColaPizza(ped);

@@ -36,12 +36,16 @@
 		</Compiler>
 		<Unit filename="include/ColaPizza.h" />
 		<Unit filename="include/NodoColaPizza.h" />
+		<Unit filename="include/NodoPilaPizza.h" />
 		<Unit filename="include/Pedido.h" />
+		<Unit filename="include/PilaPizza.h" />
 		<Unit filename="include/Pizzeria.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/ColaPizza.cpp" />
 		<Unit filename="src/NodoColaPizza.cpp" />
+		<Unit filename="src/NodoPilaPizza.cpp" />
 		<Unit filename="src/Pedido.cpp" />
+		<Unit filename="src/PilaPizza.cpp" />
 		<Unit filename="src/Pizzeria.cpp" />
 		<Extensions />
 	</Project>

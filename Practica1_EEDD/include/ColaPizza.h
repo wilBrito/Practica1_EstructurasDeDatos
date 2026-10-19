@@ -13,7 +13,6 @@ class ColaPizza
 
     public:
         ColaPizza();
-        ~ColaPizza();
 
         void encolar(Pedido ped);
         Pedido inicio();
