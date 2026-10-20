@@ -5,12 +5,14 @@
 #include<iostream>
 #include<Pedido.h>
 
+
+#define CAP_CAJA 6
 class PilaPizza
 {
     friend class Pizzeria;
     private:
         NodoPilaPizza *cima;
-        int capacidad;
+        int capacidadActual;
         int enviados;
         int retirados;
     public:

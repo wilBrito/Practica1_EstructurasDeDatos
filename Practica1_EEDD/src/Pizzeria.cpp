@@ -78,9 +78,9 @@ void Pizzeria::de_Exp_a_Caja(ColaPizza& colaPi, PilaPizza& pilaPi){
 }
 // funcion auxiliar para no repetir tanto codigo
 void Pizzeria::aux_pasos_caja(ColaPizza& coPizza, PilaPizza& piPizza){
-    if(piPizza.capacidad != 0){
+    if(piPizza.capacidadActual < CAP_CAJA){
         de_Exp_a_Caja(coPizza, piPizza);
-        piPizza.capacidad--;
+        piPizza.capacidadActual++;
     }
     else{
         piPizza.enviados++;

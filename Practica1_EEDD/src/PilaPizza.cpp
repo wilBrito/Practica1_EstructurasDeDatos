@@ -7,7 +7,7 @@ using namespace std;
 PilaPizza::PilaPizza()
 {
     cima = NULL;
-    capacidad = 6;
+    capacidadActual = 0;
     enviados = 0;
     retirados = 0;
 }
@@ -18,13 +18,13 @@ void PilaPizza::reiniciar(){
             cima = cima->siguiente;
             delete aux;
         }
-    capacidad = 6;
+    capacidadActual = 0;
 }
 
 PilaPizza::PilaPizza(int cap)
 {
     cima = NULL;
-    capacidad = cap;
+    capacidadActual = cap;
     enviados = 0;
     retirados = 0;
 }
