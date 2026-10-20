@@ -5,15 +5,13 @@
 #include "ColaPizza.h"
 #include "Pedido.h"
 using namespace std;
+
+
 Pizzeria::Pizzeria()
 {
     idcontado=0;
 }
 
-Pizzeria::~Pizzeria()
-{
-    //dtor
-}
 void Pizzeria::crear_N_pedidos(int num){
     int i=0;
     srand(time(NULL));
@@ -49,8 +47,12 @@ void Pizzeria::mostrar_pedidos(){
     colaExpEste.mostrarCola();
     colaExpOeste.mostrarCola();
 
-
+    cajaEste.mostrarPila();
+    cajaOeste.mostrarPila();
+    cajaNorte.mostrarPila();
+    cajaSur.mostrarPila();
 }
+
 void Pizzeria::de_cocina_a_Exp(){
     Pedido aMover=colaCocina.inicio();
     if(aMover.zona_reparto=="NORTE"){
@@ -68,12 +70,25 @@ void Pizzeria::de_cocina_a_Exp(){
     colaCocina.desencolar();
 }
 
-void Pizzeria::de_Exp_a_Caja(ColaPizza colaPi, PilaPizza pilaPi){
+void Pizzeria::de_Exp_a_Caja(ColaPizza& colaPi, PilaPizza& pilaPi){
     Pedido aMover = colaPi.inicio();
-    aMover.estado = "CAJA";
+    aMover.estado = "CAJA_" + aMover.estado;
     pilaPi.apilar(aMover);
     colaPi.desencolar();
 }
+// funcion auxiliar para no repetir tanto codigo
+void Pizzeria::aux_pasos_caja(ColaPizza& coPizza, PilaPizza& piPizza){
+    if(piPizza.capacidad != 0){
+        de_Exp_a_Caja(coPizza, piPizza);
+        piPizza.capacidad--;
+    }
+    else{
+        piPizza.enviados++;
+        piPizza.reiniciar();
+
+    }
+}
+
 
 void Pizzeria::de_prepEsp_a_cocina(){
     Pedido aMover=colaPedidosEspeciales.inicio();
@@ -104,6 +119,21 @@ void Pizzeria::N_Pedidos_Paso(int pasos){
     else{
 
         int i=0;
+        //Se introdu. en cajas
+        while(!colaExpNorte.es_vacia()){
+            aux_pasos_caja(colaExpNorte, cajaNorte);
+        }
+        while(!colaExpEste.es_vacia()){
+            aux_pasos_caja(colaExpEste, cajaEste);
+        }
+        while(!colaExpSur.es_vacia()){
+            aux_pasos_caja(colaExpSur, cajaSur);
+        }
+        while(!colaExpOeste.es_vacia()){
+            aux_pasos_caja(colaExpOeste, cajaOeste);
+        }
+
+        //Colas pizzeria
         while(!colaCocina.es_vacia()&&i<pasos){
             de_cocina_a_Exp();
             i++;
@@ -117,23 +147,7 @@ void Pizzeria::N_Pedidos_Paso(int pasos){
             i++;
         }
 
-        //Se introdu. en cajas
-        while(!colaExpNorte.es_vacia()&&i<pasos){
-            de_Exp_a_Caja(colaExpNorte, CajaNorte);
-            i++;
-        }
-        while(!colaExpEste.es_vacia()&&i<pasos){
-            de_Exp_a_Caja(colaExpEste, CajaEste);
-            i++;
-        }
-        while(!colaExpSur.es_vacia()&&i<pasos){
-            de_Exp_a_Caja(colaExpSur, CajaSur);
-            i++;
-        }
-        while(!colaExpNorte.es_vacia()&&i<pasos){
-            de_Exp_a_Caja(colaExpOeste, CajaOeste);
-            i++;
-        }
+
 
         if(i<pasos){
             cout<<"----------------------------------------------------------------------------------------------------"<<endl;

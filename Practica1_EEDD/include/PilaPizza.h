@@ -7,6 +7,7 @@
 
 class PilaPizza
 {
+    friend class Pizzeria;
     private:
         NodoPilaPizza *cima;
         int capacidad;
@@ -21,6 +22,8 @@ class PilaPizza
         void desapilar();
         Pedido mostrarCima();
         void mostrarPila();
+
+        void reiniciar();
 };
 
 #endif // PILAPIZZA_H
