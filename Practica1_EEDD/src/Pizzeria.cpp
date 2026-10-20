@@ -48,6 +48,8 @@ void Pizzeria::mostrar_pedidos(){
     colaExpSur.mostrarCola();
     colaExpEste.mostrarCola();
     colaExpOeste.mostrarCola();
+
+
 }
 void Pizzeria::de_cocina_a_Exp(){
     Pedido aMover=colaCocina.inicio();
@@ -64,6 +66,13 @@ void Pizzeria::de_cocina_a_Exp(){
             aMover.estado = "EXP OESTE";
             colaExpOeste.encolar(aMover);}
     colaCocina.desencolar();
+}
+
+void Pizzeria::de_Exp_a_Caja(ColaPizza colaPi, PilaPizza pilaPi){
+    Pedido aMover = colaPi.inicio();
+    aMover.estado = "CAJA";
+    pilaPi.apilar(aMover);
+    colaPi.desencolar();
 }
 
 void Pizzeria::de_prepEsp_a_cocina(){
@@ -93,6 +102,7 @@ void Pizzeria::N_Pedidos_Paso(int pasos){
         cout<<"----------------------------------------------------------------------------------------------------"<<endl;
     }
     else{
+
         int i=0;
         while(!colaCocina.es_vacia()&&i<pasos){
             de_cocina_a_Exp();
@@ -106,6 +116,25 @@ void Pizzeria::N_Pedidos_Paso(int pasos){
             de_recibido_a_cocina_o_prepEsp();
             i++;
         }
+
+        //Se introdu. en cajas
+        while(!colaExpNorte.es_vacia()&&i<pasos){
+            de_Exp_a_Caja(colaExpNorte, CajaNorte);
+            i++;
+        }
+        while(!colaExpEste.es_vacia()&&i<pasos){
+            de_Exp_a_Caja(colaExpEste, CajaEste);
+            i++;
+        }
+        while(!colaExpSur.es_vacia()&&i<pasos){
+            de_Exp_a_Caja(colaExpSur, CajaSur);
+            i++;
+        }
+        while(!colaExpNorte.es_vacia()&&i<pasos){
+            de_Exp_a_Caja(colaExpOeste, CajaOeste);
+            i++;
+        }
+
         if(i<pasos){
             cout<<"----------------------------------------------------------------------------------------------------"<<endl;
             cout<<"NO SE HA PODIDO REALIZAR "<<pasos<<" PASOS, SE HAN REALIZADO "<< i <<" PASOS EN TOTAL"<<endl;
@@ -116,4 +145,5 @@ void Pizzeria::N_Pedidos_Paso(int pasos){
             cout<<"----------------------------------------------------------------------------------------------------"<<endl;
         }
     }}
+
 

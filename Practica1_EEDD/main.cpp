@@ -15,7 +15,11 @@ int menu(){
     cout<<" -------------------------------------------------------------------------------"<<endl;
     cout<<"| 2                                       |Ejecutar un paso de simulación       |"<<endl;
     cout<<" -------------------------------------------------------------------------------"<<endl;
-    cout<<"| 3                                       |Mostrar el estado del sistema       |"<<endl;
+    cout<<"| 3                                       |Mostrar el estado del sistema        |"<<endl;
+    cout<<" -------------------------------------------------------------------------------"<<endl;
+    cout<<"| 4                                       |Ver la caja activa de una zona       |"<<endl;
+    cout<<" -------------------------------------------------------------------------------"<<endl;
+    cout<<"| 5                                       |Retirar un pedido de una caja activa |"<<endl;
     cout<<" -------------------------------------------------------------------------------"<<endl;
     cout<<"| 0                                       |Salir                                |"<<endl;
     cout<<" -------------------------------------------------------------------------------"<<endl;
@@ -54,6 +58,12 @@ int main()
             break;
         case 3:
             pizzeriaLuigi.mostrar_pedidos();
+            break;
+        case 4:
+
+            break;
+        case 5:
+
             break;
         case 0:
             //salir

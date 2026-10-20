@@ -9,8 +9,12 @@ class PilaPizza
 {
     private:
         NodoPilaPizza *cima;
+        int capacidad;
+        int enviados;
+        int retirados;
     public:
         PilaPizza();
+        PilaPizza(int capacidad);
 
         bool esVacia();
         void apilar(Pedido ped);
