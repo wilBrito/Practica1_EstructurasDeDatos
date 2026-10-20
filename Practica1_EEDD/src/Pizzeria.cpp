@@ -47,9 +47,15 @@ void Pizzeria::mostrar_pedidos(){
     colaExpEste.mostrarCola();
     colaExpOeste.mostrarCola();
 
+
+    cout<<"=== CAJAS TERMICAS ==="<<endl;
+    cout<<"Zona Este -> ";
     cajaEste.mostrarPila();
+    cout<<"Zona Oeste -> ";
     cajaOeste.mostrarPila();
+    cout<<"Zona Norte -> ";
     cajaNorte.mostrarPila();
+    cout<<"Zona Sur -> ";
     cajaSur.mostrarPila();
 }
 

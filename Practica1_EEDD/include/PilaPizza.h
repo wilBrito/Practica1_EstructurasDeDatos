@@ -12,6 +12,7 @@ class PilaPizza
     friend class Pizzeria;
     private:
         NodoPilaPizza *cima;
+
         int capacidadActual;
         int enviados;
         int retirados;
