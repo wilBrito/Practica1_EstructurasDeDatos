@@ -16,6 +16,7 @@ class PilaPizza
         int capacidadActual;
         int enviados;
         int retirados;
+        int encaja;
     public:
         PilaPizza();
         PilaPizza(int capacidad);
@@ -27,6 +28,7 @@ class PilaPizza
         void mostrarPila();
 
         void reiniciar();
+        void retirarelemento(string id);
 };
 
 #endif // PILAPIZZA_H

@@ -75,27 +75,6 @@ void Pizzeria::de_cocina_a_Exp(){
             colaExpOeste.encolar(aMover);}
     colaCocina.desencolar();
 }
-
-void Pizzeria::de_Exp_a_Caja(ColaPizza& colaPi, PilaPizza& pilaPi){
-    Pedido aMover = colaPi.inicio();
-    aMover.estado = "CAJA_" + aMover.estado;
-    pilaPi.apilar(aMover);
-    colaPi.desencolar();
-}
-// funcion auxiliar para no repetir tanto codigo
-void Pizzeria::aux_pasos_caja(ColaPizza& coPizza, PilaPizza& piPizza){
-    if(piPizza.capacidadActual < CAP_CAJA){
-        de_Exp_a_Caja(coPizza, piPizza);
-        piPizza.capacidadActual++;
-    }
-    else{
-        piPizza.enviados++;
-        piPizza.reiniciar();
-
-    }
-}
-
-
 void Pizzeria::de_prepEsp_a_cocina(){
     Pedido aMover=colaPedidosEspeciales.inicio();
     aMover.estado = "COCINA";
@@ -115,55 +94,113 @@ void Pizzeria::de_recibido_a_cocina_o_prepEsp(){
     }
     colaPedidos.desencolar();
 }
+void Pizzeria::deExpEste_a_cajaEste(){
+    Pedido aMover=colaExpEste.inicio();
+    aMover.estado="CAJA ESTE";
+    cajaEste.apilar(aMover);
+    colaExpEste.desencolar();}
+void Pizzeria::deExpOeste_a_cajaOeste(){
+    Pedido aMover=colaExpOeste.inicio();
+    aMover.estado="CAJA OESTE";
+    cajaOeste.apilar(aMover);
+    colaExpOeste.desencolar();}
+void Pizzeria::deExpNorte_a_cajaNorte(){
+    Pedido aMover=colaExpNorte.inicio();
+    aMover.estado="CAJA NORTE";
+    cajaNorte.apilar(aMover);
+    colaExpNorte.desencolar();}
+void Pizzeria::deExpSur_a_cajaSur(){
+    Pedido aMover=colaExpSur.inicio();
+    aMover.estado="CAJA SUR";
+    cajaSur.apilar(aMover);
+    colaExpSur.desencolar();}
 
-void Pizzeria::N_Pedidos_Paso(int pasos){
-    if(pasos<0){
-        cout<<"----------------------------------------------------------------------------------------------------"<<endl;
-        cout<< "NO SE PUEDEN DAR PASOS NEGATIVOS"<<endl;
-        cout<<"----------------------------------------------------------------------------------------------------"<<endl;
-    }
-    else{
-
+void Pizzeria::N_Pedidos_Paso(){
         int i=0;
+        int pasos=10;
         //Se introdu. en cajas
-        while(!colaExpNorte.es_vacia()){
-            aux_pasos_caja(colaExpNorte, cajaNorte);
+        while(!colaExpNorte.es_vacia() && i<pasos){
+            deExpNorte_a_cajaNorte();
         }
-        while(!colaExpEste.es_vacia()){
-            aux_pasos_caja(colaExpEste, cajaEste);
+        i=0;
+        while(!colaExpEste.es_vacia() && i<pasos){
+            deExpEste_a_cajaEste();
         }
-        while(!colaExpSur.es_vacia()){
-            aux_pasos_caja(colaExpSur, cajaSur);
+        i=0;
+        while(!colaExpSur.es_vacia() && i<pasos){
+            deExpSur_a_cajaSur();
         }
-        while(!colaExpOeste.es_vacia()){
-            aux_pasos_caja(colaExpOeste, cajaOeste);
+        i=0;
+        while(!colaExpOeste.es_vacia() && i<pasos){
+            deExpOeste_a_cajaOeste();
         }
+        i=0;
 
         //Colas pizzeria
         while(!colaCocina.es_vacia()&&i<pasos){
             de_cocina_a_Exp();
-            i++;
         }
+        i=0;
         while(!colaPedidosEspeciales.es_vacia()&&i<pasos){
             de_prepEsp_a_cocina();
-            i++;
         }
+        i=0;
         while(!colaPedidos.es_vacia()&&i<pasos){
             de_recibido_a_cocina_o_prepEsp();
-            i++;
-        }
-
-
-
-        if(i<pasos){
-            cout<<"----------------------------------------------------------------------------------------------------"<<endl;
-            cout<<"NO SE HA PODIDO REALIZAR "<<pasos<<" PASOS, SE HAN REALIZADO "<< i <<" PASOS EN TOTAL"<<endl;
-            cout<<"----------------------------------------------------------------------------------------------------"<<endl;}
-        else{
-            cout<<"----------------------------------------------------------------------------------------------------"<<endl;
-            cout<<"TODOS LOS PASOS REALIZADOS"<<endl;
-            cout<<"----------------------------------------------------------------------------------------------------"<<endl;
-        }
-    }}
+    }
+    cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+    cout<<"PASOS EN CADA COLA DADOS CORRECTAMENTE"<<endl;
+    cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+    }
+void Pizzeria::mostrarPila(char zona){
+if(zona=='N'){
+    cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+    cout<<"CAJA NORTE"<<endl;
+    cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+    cajaNorte.mostrarPila();
+}
+else if(zona=='S'){
+    cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+    cout<<"CAJA SUR"<<endl;
+    cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+    cajaSur.mostrarPila();
+}
+else if(zona=='E'){
+    cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+    cout<<"CAJA ESTE"<<endl;
+    cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+    cajaEste.mostrarPila();
+}
+else if(zona=='O'){
+    cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+    cout<<"CAJA OESTE"<<endl;
+    cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+    cajaOeste.mostrarPila();
+}}
+void Pizzeria::retirarelemento(char zona,string id){
+if(zona=='N'){
+    cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+    cout<<"RETIRANDO EN ZONA NORTE"<<endl;
+    cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+    cajaOeste.retirarelemento(id);
+}
+else if(zona=='S'){
+    cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+    cout<<"RETIRANDO EN ZONA SUR"<<endl;
+    cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+    cajaSur.retirarelemento(id);
+}
+else if(zona=='E'){
+    cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+    cout<<"RETIRANDO EN ZONA ESTE"<<endl;
+    cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+    cajaEste.retirarelemento(id);
+}
+else if(zona=='O'){
+    cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+    cout<<"RETIRANDO EN ZONA OESTE"<<endl;
+    cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+    cajaOeste.retirarelemento(id);
+}}
 
 

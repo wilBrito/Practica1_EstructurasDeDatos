@@ -50,25 +50,64 @@ int main()
         case 2:
             int pasos;
             cout<<"----------------------------------------------------------------------------------------------------"<<endl;
-            cout<<"Cuantos pasos desea dar?"<<endl;
+            cout<<"DANDO 10 PASOS EN CADA COLA"<<endl;
             cout<<"----------------------------------------------------------------------------------------------------"<<endl;
-            cin>>pasos;
-            cout<<"----------------------------------------------------------------------------------------------------"<<endl;
-            pizzeriaLuigi.N_Pedidos_Paso(pasos);
+            pizzeriaLuigi.N_Pedidos_Paso();
             break;
         case 3:
             pizzeriaLuigi.mostrar_pedidos();
             break;
         case 4:
-
+            bool zona;
+            char busq;
+            zona=false;
+            while(!zona){
+            cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+            cout<<"INTRODUCE LA ZONA QUE QUIERES REVISAR"<<endl;
+            cout<<"N=NORTE , S=SUR , E=ESTE , O=OESTE"<<endl;
+            cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+            cin>>busq;
+            if(busq=='N'||busq=='S'||busq=='E'||busq=='O'){
+                zona=true;
+            }
+            else{
+                cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+                cout<<"ZONA NO VÁLIDA"<<endl;
+                cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+            }}
+                pizzeriaLuigi.mostrarPila(busq);
             break;
-        case 5:
-
+        case 5:{
+            bool zona2;
+            char busq2;
+            string id;
+            zona2=false;
+            while(!zona2){
+            cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+            cout<<"INTRODUCE LA ZONA QUE QUIERES REVISAR"<<endl;
+            cout<<"N=NORTE , S=SUR , E=ESTE , O=OESTE"<<endl;
+            cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+            cin>>busq2;
+            if(busq2=='N'||busq2=='S'||busq2=='E'||busq2=='O'){
+                zona2=true;
+            }
+            else{
+                cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+                cout<<"ZONA NO VÁLIDA"<<endl;
+                cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+            }}
+            cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+            cout<<"INTRODUCE EL ID A RETIRAR CON FORMATO P+5 cifras:"<<endl;
+            cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+            cin>>id;
+                pizzeriaLuigi.retirarelemento(busq2,id);}
             break;
         case 0:
             //salir
+
             break;
         default:
+
             cout<<"----------------------------------------------------------------------------------------------------"<<endl;
             cout<<"Opcion no valida, vuelva a seleccionar"<<endl;
             cout<<"----------------------------------------------------------------------------------------------------"<<endl;

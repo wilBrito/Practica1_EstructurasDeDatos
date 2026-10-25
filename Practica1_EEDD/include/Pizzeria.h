@@ -26,17 +26,17 @@ class Pizzeria
         void de_cocina_a_Exp();
         void de_prepEsp_a_cocina();
         void de_recibido_a_cocina_o_prepEsp();
-
-        void de_Exp_a_Caja(ColaPizza& colaPi, PilaPizza& pilaPi);
+        void deExpNorte_a_cajaNorte();
+        void deExpSur_a_cajaSur();
+        void deExpEste_a_cajaEste();
+        void deExpOeste_a_cajaOeste();
     public:
         Pizzeria();
         void crear_N_pedidos(int num);
         void mostrar_pedidos();
-        void N_Pedidos_Paso(int pasos);
-
-
-        void aux_pasos_caja(ColaPizza& coPizza, PilaPizza& piPizza);
-
+        void N_Pedidos_Paso();
+        void mostrarPila(char zona);
+        void retirarelemento(char zona, string id);
     protected:
 };
 
