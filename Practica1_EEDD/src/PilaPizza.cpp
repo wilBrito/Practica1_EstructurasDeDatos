@@ -88,22 +88,25 @@ void PilaPizza::retirarelemento(string id){
 }
 else{
     bool encontrado=false;
-    PilaPizza aux;
-    while(cima && !encontrado){
-        if(cima->elementoPedido.id_pedido==id){
-            desapilar();
+    NodoPilaPizza *aux = cima;
+    NodoPilaPizza *aborrar;
+    if(aux->elementoPedido.id_pedido==id){
+        cima=aux->siguiente;
+        encaja--;
+        delete aux;
+        encontrado=true;
+    }
+    while(aux && !encontrado){
+        if(aux->siguiente->elementoPedido.id_pedido==id){
+            aborrar=aux->siguiente;
+            aux->siguiente=aux->siguiente->siguiente;
+            delete aborrar;
+            encaja--;
             encontrado=true;
-            retirados++;
         }
         else{
-            aux.apilar(this->mostrarCima());
-            desapilar();
+            aux=aux->siguiente;
         }
-    }
-    cout<<"Prueba"<<endl;
-    while(aux.cima){
-        this->apilar(aux.mostrarCima());
-        aux.desapilar();
     }
     if(encontrado){
         cout<<"----------------------------------------------------------------------------------------------------"<<endl;
@@ -114,6 +117,6 @@ else{
         cout<<"----------------------------------------------------------------------------------------------------"<<endl;
         cout<<"ELEMENTO NO ENCONTRADO"<<endl;
         cout<<"----------------------------------------------------------------------------------------------------"<<endl;
-    }
+    }}
 }
-}
+
