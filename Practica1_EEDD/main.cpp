@@ -75,7 +75,7 @@ int main()
                 cout<<"ZONA NO VÁLIDA"<<endl;
                 cout<<"----------------------------------------------------------------------------------------------------"<<endl;
             }}
-                pizzeriaLuigi.mostrarPila(busq);
+            pizzeriaLuigi.mostrarPila(busq);
             break;
         case 5:{
             bool zona2;

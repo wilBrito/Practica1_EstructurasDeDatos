@@ -64,26 +64,26 @@ Pedido PilaPizza::mostrarCima(){
 void PilaPizza::mostrarPila() {
     cout << "pedidos: " << encaja << "/" << capacidadActual << endl;
 
-    PilaPizza aux = *this;
+    NodoPilaPizza *aux = cima;
 
-    while (aux.cima) {
-        cout << aux.mostrarCima().id_pedido << endl;
-        aux.desapilar();
+    while (aux) {
+        cout << aux->elementoPedido.id_pedido << endl;
+        aux = aux->siguiente;
     }
 
     cout << "cajas enviadas: " << enviados
          << " pedidos retirados: " << retirados << endl;
 }
 void PilaPizza::retirarelemento(string id){
-if(id.length() != 6){
-    cout<<"----------------------------------------------------------------------------------------------------"<<endl;
-    cout<<"ID CON LONGITUD INVÁLIDA"<<endl;
-    cout<<"----------------------------------------------------------------------------------------------------"<<endl;
-}
-else if(id[0] != 'P'){
-    cout<<"----------------------------------------------------------------------------------------------------"<<endl;
-    cout<<"PEDIDOS DEBEN EMPEZAR CON 'P'"<<endl;
-    cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+    if(id.length() != 6){
+        cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+        cout<<"ID CON LONGITUD INVÁLIDA"<<endl;
+        cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+    }
+    else if(id[0] != 'P'){
+        cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+        cout<<"PEDIDOS DEBEN EMPEZAR CON 'P'"<<endl;
+        cout<<"----------------------------------------------------------------------------------------------------"<<endl;
 
 }
 else{
@@ -100,6 +100,7 @@ else{
             desapilar();
         }
     }
+    cout<<"Prueba"<<endl;
     while(aux.cima){
         this->apilar(aux.mostrarCima());
         aux.desapilar();
