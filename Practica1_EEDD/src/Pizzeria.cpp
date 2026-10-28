@@ -50,13 +50,16 @@ void Pizzeria::mostrar_pedidos(){
 
     cout<<"=== CAJAS TERMICAS ==="<<endl;
     cout<<"Zona Este -> ";
-    cajaEste.mostrarPila();
+    cajaEste.mostrarPilaSimple();
     cout<<"Zona Oeste -> ";
-    cajaOeste.mostrarPila();
+    cajaOeste.mostrarPilaSimple();
     cout<<"Zona Norte -> ";
-    cajaNorte.mostrarPila();
+    cajaNorte.mostrarPilaSimple();
     cout<<"Zona Sur -> ";
-    cajaSur.mostrarPila();
+    cajaSur.mostrarPilaSimple();
+    cout<<"Total de cajas enviadas: "<<cajaEste.enviados+cajaOeste.enviados+cajaSur.enviados+cajaNorte.enviados<<endl;
+    cout<<"Total de pedidos enviados o retirados: "<<cajaEste.enviados*cajaEste.capacidadActual+cajaOeste.enviados*cajaOeste.capacidadActual+cajaSur.enviados*cajaSur.capacidadActual+cajaNorte.enviados*cajaNorte.capacidadActual+cajaEste.retirados+cajaOeste.retirados+cajaSur.retirados+cajaNorte.retirados<<endl;
+
 }
 
 void Pizzeria::de_cocina_a_Exp(){

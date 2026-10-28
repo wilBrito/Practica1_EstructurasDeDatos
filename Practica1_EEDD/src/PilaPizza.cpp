@@ -65,34 +65,30 @@ void PilaPizza::mostrarPila() {
     cout << "pedidos: " << encaja << "/" << capacidadActual << endl;
 
     NodoPilaPizza *aux = cima;
-
+    if(encaja!=0){
+    cout<<"CIMA"<<endl;}
     while (aux) {
         cout << aux->elementoPedido.id_pedido << endl;
         aux = aux->siguiente;
     }
+    if(encaja!=0){
+    cout<<"FONDO"<<endl;}
 
     cout << "cajas enviadas: " << enviados
          << " pedidos retirados: " << retirados << endl;
 }
-void PilaPizza::retirarelemento(string id){
-    if(id.length() != 6){
-        cout<<"----------------------------------------------------------------------------------------------------"<<endl;
-        cout<<"ID CON LONGITUD INVÁLIDA"<<endl;
-        cout<<"----------------------------------------------------------------------------------------------------"<<endl;
-    }
-    else if(id[0] != 'P'){
-        cout<<"----------------------------------------------------------------------------------------------------"<<endl;
-        cout<<"PEDIDOS DEBEN EMPEZAR CON 'P'"<<endl;
-        cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+void PilaPizza::mostrarPilaSimple(){
+    cout << "pedidos: " << encaja << "/" << capacidadActual <<"\t" <<"cajas enviadas: " << enviados<<endl;
 
 }
-else{
+void PilaPizza::retirarelemento(string id){
     bool encontrado=false;
     NodoPilaPizza *aux = cima;
     NodoPilaPizza *aborrar;
     if(aux->elementoPedido.id_pedido==id){
         cima=aux->siguiente;
         encaja--;
+        retirados++;
         delete aux;
         encontrado=true;
     }
@@ -117,6 +113,6 @@ else{
         cout<<"----------------------------------------------------------------------------------------------------"<<endl;
         cout<<"ELEMENTO NO ENCONTRADO"<<endl;
         cout<<"----------------------------------------------------------------------------------------------------"<<endl;
-    }}
+    }
 }
 

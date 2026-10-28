@@ -26,6 +26,7 @@ class PilaPizza
         void desapilar();
         Pedido mostrarCima();
         void mostrarPila();
+        void mostrarPilaSimple();
 
         void reiniciar();
         void retirarelemento(string id);
