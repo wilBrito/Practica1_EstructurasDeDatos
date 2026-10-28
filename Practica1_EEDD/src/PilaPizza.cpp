@@ -16,7 +16,7 @@ PilaPizza::PilaPizza()
 
 void PilaPizza::reiniciar(ColaPizza& cola){
     while (cima != NULL) {
-            desapilarEnviado(cola);
+            desapilar(cola);
         }
 }
 
@@ -43,7 +43,7 @@ void PilaPizza::apilar(Pedido ped,ColaPizza& cola){
     }
 }
 
-void PilaPizza::desapilarEnviado(ColaPizza& cola){
+void PilaPizza::desapilar(ColaPizza& cola){
     NodoPilaPizza *nodo;
     if(cima){
         nodo = cima;

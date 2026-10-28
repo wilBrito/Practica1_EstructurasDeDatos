@@ -23,7 +23,7 @@ class PilaPizza
 
         bool esVacia();
         void apilar(Pedido ped,ColaPizza& cola);
-        void desapilarEnviado(ColaPizza& cola);
+        void desapilar(ColaPizza& cola);
         Pedido mostrarCima();
         void mostrarPila();
         void mostrarPilaSimple();
