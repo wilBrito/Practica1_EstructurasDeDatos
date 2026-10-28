@@ -38,6 +38,7 @@ void Pizzeria::crear_N_pedidos(int num){
         i++;
     }
 }
+
 void Pizzeria::mostrar_pedidos(){
     colaPedidos.mostrarCola();
     colaCocina.mostrarCola();
@@ -78,6 +79,7 @@ void Pizzeria::de_cocina_a_Exp(){
             colaExpOeste.encolar(aMover);}
     colaCocina.desencolar();
 }
+
 void Pizzeria::de_prepEsp_a_cocina(){
     Pedido aMover=colaPedidosEspeciales.inicio();
     aMover.estado = "COCINA";
@@ -97,26 +99,34 @@ void Pizzeria::de_recibido_a_cocina_o_prepEsp(){
     }
     colaPedidos.desencolar();
 }
+
 void Pizzeria::deExpEste_a_cajaEste(){
     Pedido aMover=colaExpEste.inicio();
     aMover.estado="CAJA ESTE";
     cajaEste.apilar(aMover,finalizados);
-    colaExpEste.desencolar();}
+    colaExpEste.desencolar();
+}
+
 void Pizzeria::deExpOeste_a_cajaOeste(){
     Pedido aMover=colaExpOeste.inicio();
     aMover.estado="CAJA OESTE";
     cajaOeste.apilar(aMover,finalizados);
-    colaExpOeste.desencolar();}
+    colaExpOeste.desencolar();
+}
+
 void Pizzeria::deExpNorte_a_cajaNorte(){
     Pedido aMover=colaExpNorte.inicio();
     aMover.estado="CAJA NORTE";
     cajaNorte.apilar(aMover,finalizados);
-    colaExpNorte.desencolar();}
+    colaExpNorte.desencolar();
+}
+
 void Pizzeria::deExpSur_a_cajaSur(){
     Pedido aMover=colaExpSur.inicio();
     aMover.estado="CAJA SUR";
     cajaSur.apilar(aMover,finalizados);
-    colaExpSur.desencolar();}
+    colaExpSur.desencolar();
+}
 
 void Pizzeria::N_Pedidos_Paso(){
         int i=0;
@@ -154,7 +164,8 @@ void Pizzeria::N_Pedidos_Paso(){
     cout<<"----------------------------------------------------------------------------------------------------"<<endl;
     cout<<"PASOS EN CADA COLA DADOS CORRECTAMENTE"<<endl;
     cout<<"----------------------------------------------------------------------------------------------------"<<endl;
-    }
+}
+
 void Pizzeria::mostrarPila(char zona){
     if(zona=='N'){
         cout<<"----------------------------------------------------------------------------------------------------"<<endl;
@@ -179,33 +190,38 @@ void Pizzeria::mostrarPila(char zona){
         cout<<"CAJA OESTE"<<endl;
         cout<<"----------------------------------------------------------------------------------------------------"<<endl;
         cajaOeste.mostrarPila();
-}}
+    }
+}
+
 void Pizzeria::retirarelemento(char zona,string id){
-if(zona=='N'){
-    cout<<"----------------------------------------------------------------------------------------------------"<<endl;
-    cout<<"RETIRANDO EN ZONA NORTE"<<endl;
-    cout<<"----------------------------------------------------------------------------------------------------"<<endl;
-    cajaOeste.retirarelemento(id,finalizados);
+    if(zona=='N'){
+        cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+        cout<<"RETIRANDO EN ZONA NORTE"<<endl;
+        cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+        cajaOeste.retirarelemento(id,finalizados);
+    }
+    else if(zona=='S'){
+        cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+        cout<<"RETIRANDO EN ZONA SUR"<<endl;
+        cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+        cajaSur.retirarelemento(id,finalizados);
+    }
+    else if(zona=='E'){
+        cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+        cout<<"RETIRANDO EN ZONA ESTE"<<endl;
+        cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+        cajaEste.retirarelemento(id,finalizados);
+    }
+    else if(zona=='O'){
+        cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+        cout<<"RETIRANDO EN ZONA OESTE"<<endl;
+        cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+        cajaOeste.retirarelemento(id,finalizados);
+    }
 }
-else if(zona=='S'){
-    cout<<"----------------------------------------------------------------------------------------------------"<<endl;
-    cout<<"RETIRANDO EN ZONA SUR"<<endl;
-    cout<<"----------------------------------------------------------------------------------------------------"<<endl;
-    cajaSur.retirarelemento(id,finalizados);
-}
-else if(zona=='E'){
-    cout<<"----------------------------------------------------------------------------------------------------"<<endl;
-    cout<<"RETIRANDO EN ZONA ESTE"<<endl;
-    cout<<"----------------------------------------------------------------------------------------------------"<<endl;
-    cajaEste.retirarelemento(id,finalizados);
-}
-else if(zona=='O'){
-    cout<<"----------------------------------------------------------------------------------------------------"<<endl;
-    cout<<"RETIRANDO EN ZONA OESTE"<<endl;
-    cout<<"----------------------------------------------------------------------------------------------------"<<endl;
-    cajaOeste.retirarelemento(id,finalizados);
-}}
+
 void Pizzeria::mostrarColaFinalizados(){
-finalizados.mostrarCola();}
+    finalizados.mostrarCola();
+}
 
 

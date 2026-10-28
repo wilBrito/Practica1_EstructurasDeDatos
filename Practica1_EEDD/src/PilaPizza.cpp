@@ -37,6 +37,7 @@ void PilaPizza::apilar(Pedido ped,ColaPizza& cola){
 
     cima = nuevo_nodo;
     encaja++;
+
     if(encaja==capacidadActual){
         enviados++;
         reiniciar(cola);
