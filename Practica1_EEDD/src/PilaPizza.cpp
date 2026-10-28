@@ -81,7 +81,7 @@ void PilaPizza::mostrarPilaSimple(){
     cout << "pedidos: " << encaja << "/" << capacidadActual <<"\t" <<"cajas enviadas: " << enviados<<endl;
 
 }
-void PilaPizza::retirarelemento(string id){
+void PilaPizza::retirarelemento(string id, ColaPizza& cola){
     bool encontrado=false;
     NodoPilaPizza *aux = cima;
     NodoPilaPizza *aborrar;
@@ -89,12 +89,18 @@ void PilaPizza::retirarelemento(string id){
         cima=aux->siguiente;
         encaja--;
         retirados++;
+        Pedido aFin=aux->elementoPedido;
+        aFin.estado="RETIRADO";
+        cola.encolar(aFin);
         delete aux;
         encontrado=true;
     }
     while(aux && !encontrado){
         if(aux->siguiente->elementoPedido.id_pedido==id){
             aborrar=aux->siguiente;
+            Pedido aFin=aborrar->elementoPedido;
+            aFin.estado="RETIRADO";
+            cola.encolar(aFin);
             aux->siguiente=aux->siguiente->siguiente;
             delete aborrar;
             encaja--;

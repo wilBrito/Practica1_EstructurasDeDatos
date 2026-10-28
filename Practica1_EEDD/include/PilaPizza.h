@@ -4,7 +4,7 @@
 #include "NodoPilaPizza.h"
 #include<iostream>
 #include<Pedido.h>
-
+#include <ColaPizza.h>
 
 #define CAP_CAJA 6
 class PilaPizza
@@ -29,7 +29,7 @@ class PilaPizza
         void mostrarPilaSimple();
 
         void reiniciar();
-        void retirarelemento(string id);
+        void retirarelemento(string id,ColaPizza& cola);
 };
 
 #endif // PILAPIZZA_H

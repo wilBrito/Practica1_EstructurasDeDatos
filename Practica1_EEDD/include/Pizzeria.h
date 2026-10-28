@@ -21,6 +21,7 @@ class Pizzeria
         PilaPizza cajaSur;
         PilaPizza cajaEste;
         PilaPizza cajaOeste;
+        ColaPizza finalizados;
 
         int idcontado;
         void de_cocina_a_Exp();
@@ -37,6 +38,7 @@ class Pizzeria
         void N_Pedidos_Paso();
         void mostrarPila(char zona);
         void retirarelemento(char zona, string id);
+        void mostrarColaFinalizados();
     protected:
 };
 

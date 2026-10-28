@@ -185,25 +185,27 @@ if(zona=='N'){
     cout<<"----------------------------------------------------------------------------------------------------"<<endl;
     cout<<"RETIRANDO EN ZONA NORTE"<<endl;
     cout<<"----------------------------------------------------------------------------------------------------"<<endl;
-    cajaOeste.retirarelemento(id);
+    cajaOeste.retirarelemento(id,finalizados);
 }
 else if(zona=='S'){
     cout<<"----------------------------------------------------------------------------------------------------"<<endl;
     cout<<"RETIRANDO EN ZONA SUR"<<endl;
     cout<<"----------------------------------------------------------------------------------------------------"<<endl;
-    cajaSur.retirarelemento(id);
+    cajaSur.retirarelemento(id,finalizados);
 }
 else if(zona=='E'){
     cout<<"----------------------------------------------------------------------------------------------------"<<endl;
     cout<<"RETIRANDO EN ZONA ESTE"<<endl;
     cout<<"----------------------------------------------------------------------------------------------------"<<endl;
-    cajaEste.retirarelemento(id);
+    cajaEste.retirarelemento(id,finalizados);
 }
 else if(zona=='O'){
     cout<<"----------------------------------------------------------------------------------------------------"<<endl;
     cout<<"RETIRANDO EN ZONA OESTE"<<endl;
     cout<<"----------------------------------------------------------------------------------------------------"<<endl;
-    cajaOeste.retirarelemento(id);
+    cajaOeste.retirarelemento(id,finalizados);
 }}
+void Pizzeria::mostrarColaFinalizados(){
+finalizados.mostrarCola();}
 
 

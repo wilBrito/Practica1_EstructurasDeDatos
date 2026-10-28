@@ -22,6 +22,8 @@ int menu(){
     cout<<" -------------------------------------------------------------------------------"<<endl;
     cout<<"| 5                                       |Retirar un pedido de una caja activa |"<<endl;
     cout<<" -------------------------------------------------------------------------------"<<endl;
+    cout<<"| 6                                       |Mostrar la cola de finalizados       |"<<endl;
+    cout<<" -------------------------------------------------------------------------------"<<endl;
     cout<<"| 0                                       |Salir                                |"<<endl;
     cout<<" -------------------------------------------------------------------------------"<<endl;
     cout<<"Selecciona: "<<endl;
@@ -123,6 +125,8 @@ int main()
             }}
                 pizzeriaLuigi.retirarelemento(busq2,id);}
             break;
+        case 6:
+            pizzeriaLuigi.mostrarColaFinalizados();
         case 0:
             //salir
 
@@ -134,7 +138,6 @@ int main()
             cout<<"----------------------------------------------------------------------------------------------------"<<endl;
             break;
     }
-
     }while(n!=0);
 
     return 0;

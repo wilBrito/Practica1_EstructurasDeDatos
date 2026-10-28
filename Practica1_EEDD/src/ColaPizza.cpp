@@ -84,6 +84,10 @@ void ColaPizza::mostrarCola(){
         cout<<"----------------------------------------------------------------------------------------------------"<<endl;
         while(aux){
             Pedido pedidoact=aux->elementoPedido;
+            if(interfazAux && (pedidoact.estado=="RETIRADO" || pedidoact.estado=="ENVIADO")){
+                cout<<"FINALIZADOS"<<":"<<endl;
+                cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+                interfazAux = false;}
             if(interfazAux){
                 cout<<pedidoact.estado<<":"<<endl;
                 cout<<"----------------------------------------------------------------------------------------------------"<<endl;
