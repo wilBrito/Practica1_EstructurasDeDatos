@@ -14,9 +14,9 @@ PilaPizza::PilaPizza()
     encaja=0;
 }
 
-void PilaPizza::reiniciar(){
+void PilaPizza::reiniciar(ColaPizza& cola){
     while (cima != NULL) {
-            desapilar();
+            desapilarEnviado(cola);
         }
 }
 
@@ -32,21 +32,24 @@ bool PilaPizza::esVacia(){
     return cima == NULL;
 }
 
-void PilaPizza::apilar(Pedido ped){
+void PilaPizza::apilar(Pedido ped,ColaPizza& cola){
     NodoPilaPizza *nuevo_nodo = new NodoPilaPizza(ped, cima);
 
     cima = nuevo_nodo;
     encaja++;
     if(encaja==capacidadActual){
         enviados++;
-        reiniciar();
+        reiniciar(cola);
     }
 }
 
-void PilaPizza::desapilar(){
+void PilaPizza::desapilarEnviado(ColaPizza& cola){
     NodoPilaPizza *nodo;
     if(cima){
         nodo = cima;
+        Pedido aFin=nodo->elementoPedido;
+        aFin.estado="ENVIADO";
+        cola.encolar(aFin);
         cima = nodo->siguiente;
         delete nodo;
         encaja--;

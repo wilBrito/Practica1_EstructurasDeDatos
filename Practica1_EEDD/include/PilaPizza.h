@@ -22,13 +22,13 @@ class PilaPizza
         PilaPizza(int capacidad);
 
         bool esVacia();
-        void apilar(Pedido ped);
-        void desapilar();
+        void apilar(Pedido ped,ColaPizza& cola);
+        void desapilarEnviado(ColaPizza& cola);
         Pedido mostrarCima();
         void mostrarPila();
         void mostrarPilaSimple();
 
-        void reiniciar();
+        void reiniciar(ColaPizza& cola);
         void retirarelemento(string id,ColaPizza& cola);
 };
 

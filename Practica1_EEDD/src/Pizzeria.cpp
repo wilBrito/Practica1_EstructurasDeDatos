@@ -100,22 +100,22 @@ void Pizzeria::de_recibido_a_cocina_o_prepEsp(){
 void Pizzeria::deExpEste_a_cajaEste(){
     Pedido aMover=colaExpEste.inicio();
     aMover.estado="CAJA ESTE";
-    cajaEste.apilar(aMover);
+    cajaEste.apilar(aMover,finalizados);
     colaExpEste.desencolar();}
 void Pizzeria::deExpOeste_a_cajaOeste(){
     Pedido aMover=colaExpOeste.inicio();
     aMover.estado="CAJA OESTE";
-    cajaOeste.apilar(aMover);
+    cajaOeste.apilar(aMover,finalizados);
     colaExpOeste.desencolar();}
 void Pizzeria::deExpNorte_a_cajaNorte(){
     Pedido aMover=colaExpNorte.inicio();
     aMover.estado="CAJA NORTE";
-    cajaNorte.apilar(aMover);
+    cajaNorte.apilar(aMover,finalizados);
     colaExpNorte.desencolar();}
 void Pizzeria::deExpSur_a_cajaSur(){
     Pedido aMover=colaExpSur.inicio();
     aMover.estado="CAJA SUR";
-    cajaSur.apilar(aMover);
+    cajaSur.apilar(aMover,finalizados);
     colaExpSur.desencolar();}
 
 void Pizzeria::N_Pedidos_Paso(){
