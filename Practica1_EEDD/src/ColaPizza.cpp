@@ -68,7 +68,7 @@ bool ColaPizza::es_vacia(){
 }
 
 
-//No es correcto
+
 void ColaPizza::mostrarCola(){
 
     NodoColaPizza *aux=primero;
@@ -100,6 +100,30 @@ void ColaPizza::mostrarCola(){
             aux=aux->siguiente;
         }
     }
+}
+
+void ColaPizza::mostrarColaF(){
+    if(es_vacia()){
+        cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+        cout<<"Cola sin pedidos"<<endl;
+        cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+    }
+    else{
+        NodoColaPizza *aux=primero;
+        cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+        cout<<"=== FINALIZADOS ==="<<endl;
+        cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+        cout<<"PEDIDO | CLIENTE |  PIZZA  |  TAMAÑO  |  ZONA  | PERS | ESTADO  "<<endl;
+        cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+        while(aux){
+            Pedido pedidoact=aux->elementoPedido;
+            cout<<pedidoact.id_pedido<<" |   "<<to_string(pedidoact.id_cliente)<<"   |  "<<pedidoact.tipo_pizza<<" |  "<<pedidoact.tamano<<" |  "
+            <<pedidoact.zona_reparto<<" |  "<<pedidoact.personalizada<<" |  "<<pedidoact.estado<<endl;
+            aux=aux->siguiente;
+        }
+
+    }
+
 }
 
 int ColaPizza::length(){

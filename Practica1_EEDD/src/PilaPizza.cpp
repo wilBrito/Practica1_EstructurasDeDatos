@@ -5,8 +5,7 @@
 
 using namespace std;
 
-PilaPizza::PilaPizza()
-{
+PilaPizza::PilaPizza(){
     cima = NULL;
     capacidadActual = 6;
     enviados = 0;
@@ -20,8 +19,7 @@ void PilaPizza::reiniciar(ColaPizza& cola){
         }
 }
 
-PilaPizza::PilaPizza(int cap)
-{
+PilaPizza::PilaPizza(int cap){
     cima = NULL;
     capacidadActual = cap;
     enviados = 0;
@@ -65,6 +63,7 @@ Pedido PilaPizza::mostrarCima(){
     return Pedido(); //CUIDADO definir pedido fantasma vacio
 
 }
+
 void PilaPizza::mostrarPila() {
     cout << "pedidos: " << encaja << "/" << capacidadActual << endl;
 
@@ -81,14 +80,17 @@ void PilaPizza::mostrarPila() {
     cout << "cajas enviadas: " << enviados
          << " pedidos retirados: " << retirados << endl;
 }
+
 void PilaPizza::mostrarPilaSimple(){
     cout << "pedidos: " << encaja << "/" << capacidadActual <<"\t" <<"cajas enviadas: " << enviados<<endl;
 
 }
+
 void PilaPizza::retirarelemento(string id, ColaPizza& cola){
     bool encontrado=false;
     NodoPilaPizza *aux = cima;
     NodoPilaPizza *aborrar;
+    //Si es el primero
     if(aux->elementoPedido.id_pedido==id){
         cima=aux->siguiente;
         encaja--;
@@ -99,6 +101,7 @@ void PilaPizza::retirarelemento(string id, ColaPizza& cola){
         delete aux;
         encontrado=true;
     }
+    //Si está en otr posi
     while(aux && !encontrado){
         if(aux->siguiente->elementoPedido.id_pedido==id){
             aborrar=aux->siguiente;

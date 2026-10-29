@@ -33,56 +33,67 @@
 
 1791542973 source:c:\users\chris\onedrive - geocratic sl\escritorio\eedd\practica1_estructurasdedatos\practica1_eedd\src\pedido.cpp
 
-1792491308 source:c:\users\wilbr\desktop\estructuradedatos\practica1_estrudedatos\practica1_estructurasdedatos\practica1_eedd\main.cpp
+1793199738 source:c:\users\wilbr\desktop\estructuradedatos\practica1_estrudedatos\practica1_estructurasdedatos\practica1_eedd\main.cpp
 	<iostream>
 	<ColaPizza.h>
 	<NodoColaPizza.h>
 	<Pedido.h>
 	<Pizzeria.h>
+	<stdlib.h>
 
-1792431704 c:\users\wilbr\desktop\estructuradedatos\practica1_estrudedatos\practica1_estructurasdedatos\practica1_eedd\include\colapizza.h
+1793196807 c:\users\wilbr\desktop\estructuradedatos\practica1_estrudedatos\practica1_estructurasdedatos\practica1_eedd\include\colapizza.h
 	"NodoColaPizza.h"
 	<iostream>
 	<Pedido.h>
 
-1791906991 c:\users\wilbr\desktop\estructuradedatos\practica1_estrudedatos\practica1_estructurasdedatos\practica1_eedd\include\nodocolapizza.h
+1793196807 c:\users\wilbr\desktop\estructuradedatos\practica1_estrudedatos\practica1_estructurasdedatos\practica1_eedd\include\nodocolapizza.h
 	<iostream>
 	<Pedido.h>
 
-1791890399 c:\users\wilbr\desktop\estructuradedatos\practica1_estrudedatos\practica1_estructurasdedatos\practica1_eedd\include\pedido.h
+1793196807 c:\users\wilbr\desktop\estructuradedatos\practica1_estrudedatos\practica1_estructurasdedatos\practica1_eedd\include\pedido.h
 	<string>
 
-1792536047 c:\users\wilbr\desktop\estructuradedatos\practica1_estrudedatos\practica1_estructurasdedatos\practica1_eedd\include\pizzeria.h
+1793199738 c:\users\wilbr\desktop\estructuradedatos\practica1_estrudedatos\practica1_estructurasdedatos\practica1_eedd\include\pizzeria.h
 	"ColaPizza.h"
 	"PilaPizza.h"
 	"Pedido.h"
 
-1792535934 c:\users\wilbr\desktop\estructuradedatos\practica1_estrudedatos\practica1_estructurasdedatos\practica1_eedd\include\pilapizza.h
+1793202449 c:\users\wilbr\desktop\estructuradedatos\practica1_estrudedatos\practica1_estructurasdedatos\practica1_eedd\include\pilapizza.h
+	"NodoPilaPizza.h"
+	<iostream>
+	<Pedido.h>
+	<ColaPizza.h>
+
+1793196807 c:\users\wilbr\desktop\estructuradedatos\practica1_estrudedatos\practica1_estructurasdedatos\practica1_eedd\include\nodopilapizza.h
 	"NodoPilaPizza.h"
 	<iostream>
 	<Pedido.h>
 
-1792432976 c:\users\wilbr\desktop\estructuradedatos\practica1_estrudedatos\practica1_estructurasdedatos\practica1_eedd\include\nodopilapizza.h
-	"NodoPilaPizza.h"
-	<iostream>
-	<Pedido.h>
-
-1792431697 source:c:\users\wilbr\desktop\estructuradedatos\practica1_estrudedatos\practica1_estructurasdedatos\practica1_eedd\src\colapizza.cpp
+1793199738 source:c:\users\wilbr\desktop\estructuradedatos\practica1_estrudedatos\practica1_estructurasdedatos\practica1_eedd\src\colapizza.cpp
 	"ColaPizza.h"
 	<Pedido.h>
 	<string>
 
-1791890399 source:c:\users\wilbr\desktop\estructuradedatos\practica1_estrudedatos\practica1_estructurasdedatos\practica1_eedd\src\nodocolapizza.cpp
+1793196807 source:c:\users\wilbr\desktop\estructuradedatos\practica1_estrudedatos\practica1_estructurasdedatos\practica1_eedd\src\nodocolapizza.cpp
 	"NodoColaPizza.h"
 	<Pedido.h>
 
-1792432912 source:c:\users\wilbr\desktop\estructuradedatos\practica1_estrudedatos\practica1_estructurasdedatos\practica1_eedd\src\nodopilapizza.cpp
+1793196807 source:c:\users\wilbr\desktop\estructuradedatos\practica1_estrudedatos\practica1_estructurasdedatos\practica1_eedd\src\nodopilapizza.cpp
 	"NodoPilaPizza.h"
 
-1791890399 source:c:\users\wilbr\desktop\estructuradedatos\practica1_estrudedatos\practica1_estructurasdedatos\practica1_eedd\src\pedido.cpp
+1793196807 source:c:\users\wilbr\desktop\estructuradedatos\practica1_estrudedatos\practica1_estructurasdedatos\practica1_eedd\src\pedido.cpp
 
-1792535996 source:c:\users\wilbr\desktop\estructuradedatos\practica1_estrudedatos\practica1_estructurasdedatos\practica1_eedd\src\pilapizza.cpp
+1793291785 source:c:\users\wilbr\desktop\estructuradedatos\practica1_estrudedatos\practica1_estructurasdedatos\practica1_eedd\src\pilapizza.cpp
 	"PilaPizza.h"
 	<Pedido.h>
 	<string>
+	<ColaPizza.h>
+
+1793291126 source:c:\users\wilbr\desktop\estructuradedatos\practica1_estrudedatos\practica1_estructurasdedatos\practica1_eedd\src\pizzeria.cpp
+	"Pizzeria.h"
+	<iostream>
+	<ctime>
+	<stdlib.h>
+	"ColaPizza.h"
+	"Pedido.h"
 

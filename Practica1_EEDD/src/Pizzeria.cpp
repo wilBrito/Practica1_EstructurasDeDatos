@@ -7,8 +7,7 @@
 using namespace std;
 
 
-Pizzeria::Pizzeria()
-{
+Pizzeria::Pizzeria(){
     idcontado=0;
 }
 
@@ -221,7 +220,7 @@ void Pizzeria::retirarelemento(char zona,string id){
 }
 
 void Pizzeria::mostrarColaFinalizados(){
-    finalizados.mostrarCola();
+    finalizados.mostrarColaF();
 }
 
 

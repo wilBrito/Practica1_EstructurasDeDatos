@@ -20,7 +20,8 @@ class ColaPizza
         void desencolar();
         bool es_vacia();
 
-        void mostrarCola(); //No es correcto
+        void mostrarCola();
+        void mostrarColaF();
         int length();
 
 
