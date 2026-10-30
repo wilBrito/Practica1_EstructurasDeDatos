@@ -1,6 +1,6 @@
 #include "ColaPizza.h"
 #include<Pedido.h>
-
+#include <iomanip>
 #include<string>
 
 using namespace std;
@@ -78,27 +78,27 @@ void ColaPizza::mostrarCola(){
         cout<<"----------------------------------------------------------------------------------------------------"<<endl;*/
     }
     else{
-        bool interfazAux = true;
         cout<<"----------------------------------------------------------------------------------------------------"<<endl;
         cout<<"Datos del Sistema: "<<endl;
         cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+        if(primero->elementoPedido.estado=="RETIRADO" || primero->elementoPedido.estado=="ENVIADO"){
+        cout<<"=== FINALIZADOS ==="<<":"<<endl;
+        cout<<"----------------------------------------------------------------------------------------------------"<<endl;}
+        else{
+        cout<<"=== "<<primero->elementoPedido.estado<<" ==="<<endl;
+        cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+        }
+        cout <<left<<setw(10)<<"PEDIDO"<<setw(2)<<'|'<<setw(12)<<"CLIENTE"<<setw(2)<<'|'<<setw(15)<<"PIZZA"<<setw(2)<<'|'<<setw(15)<<"TAMANO"
+        <<setw(2)<<'|'<<setw(15)<<"ZONA"<<setw(2)<<'|'<<setw(8)<<"PERS"<<setw(2)<<'|'<<setw(12)<<"ESTADO"<<setw(2)<<'|'<<endl;
+        cout<<"----------------------------------------------------------------------------------------------------"<<endl;
         while(aux){
             Pedido pedidoact=aux->elementoPedido;
-            if(interfazAux && (pedidoact.estado=="RETIRADO" || pedidoact.estado=="ENVIADO")){
-                cout<<"FINALIZADOS"<<":"<<endl;
-                cout<<"----------------------------------------------------------------------------------------------------"<<endl;
-                interfazAux = false;}
-            if(interfazAux){
-                cout<<pedidoact.estado<<":"<<endl;
-                cout<<"----------------------------------------------------------------------------------------------------"<<endl;
-                interfazAux = false;
-            }
-            cout<<"ID DEL PEDIDO :"<<pedidoact.id_pedido<<"\t"<<"ID DEL CLIENTE: "<<to_string(pedidoact.id_cliente)<<"\t"<<"TIPO: "<<pedidoact.tipo_pizza<<endl;
-            cout<<"TAMANO DE LA PIZZA:"<<pedidoact.tamano<<"\t"<<"ZONA DE REPARTO: "<<pedidoact.zona_reparto<<"\t"<<"PERSONALIZADA: "<<pedidoact.personalizada<<endl;
-            cout<<"ESTADO: "<<pedidoact.estado<<endl;
-            cout<<"----------------------------------------------------------------------------------------------------"<<endl;
+            cout << left<<setw(10)<<pedidoact.id_pedido<<setw(2)<<'|'<<setw(12)<<pedidoact.id_cliente<<setw(2)<<'|'<<setw(15)<<pedidoact.tipo_pizza
+            <<setw(2)<<'|'<<setw(15)<<pedidoact.tamano<<setw(2)<<'|'<<setw(15)<<pedidoact.zona_reparto<<setw(2)<<'|'<<setw(8)<<pedidoact.personalizada
+            <<setw(2)<<'|'<<setw(12)<<pedidoact.estado<<setw(2)<<'|'<<endl;
             aux=aux->siguiente;
         }
+        cout<<"----------------------------------------------------------------------------------------------------"<<endl;
     }
 }
 
@@ -113,14 +113,17 @@ void ColaPizza::mostrarColaF(){
         cout<<"----------------------------------------------------------------------------------------------------"<<endl;
         cout<<"=== FINALIZADOS ==="<<endl;
         cout<<"----------------------------------------------------------------------------------------------------"<<endl;
-        cout<<"PEDIDO | CLIENTE |  PIZZA  |  TAMAÑO  |  ZONA  | PERS | ESTADO  "<<endl;
+        cout <<left<<setw(10)<<"PEDIDO"<<setw(2)<<'|'<<setw(12)<<"CLIENTE"<<setw(2)<<'|'<<setw(15)<<"PIZZA"<<setw(2)<<'|'<<setw(15)<<"TAMANO"
+        <<setw(2)<<'|'<<setw(15)<<"ZONA"<<setw(2)<<'|'<<setw(8)<<"PERS"<<setw(2)<<'|'<<setw(12)<<"ESTADO"<<setw(2)<<'|'<<endl;
         cout<<"----------------------------------------------------------------------------------------------------"<<endl;
         while(aux){
             Pedido pedidoact=aux->elementoPedido;
-            cout<<pedidoact.id_pedido<<" |   "<<to_string(pedidoact.id_cliente)<<"   |  "<<pedidoact.tipo_pizza<<" |  "<<pedidoact.tamano<<" |  "
-            <<pedidoact.zona_reparto<<" |  "<<pedidoact.personalizada<<" |  "<<pedidoact.estado<<endl;
+             cout << left<<setw(10)<<pedidoact.id_pedido<<setw(2)<<'|'<<setw(12)<<pedidoact.id_cliente<<setw(2)<<'|'<<setw(15)<<pedidoact.tipo_pizza
+            <<setw(2)<<'|'<<setw(15)<<pedidoact.tamano<<setw(2)<<'|'<<setw(15)<<pedidoact.zona_reparto<<setw(2)<<'|'<<setw(8)<<pedidoact.personalizada
+            <<setw(2)<<'|'<<setw(12)<<pedidoact.estado<<setw(2)<<'|'<<endl;
             aux=aux->siguiente;
         }
+        cout<<"----------------------------------------------------------------------------------------------------"<<endl;
 
     }
 

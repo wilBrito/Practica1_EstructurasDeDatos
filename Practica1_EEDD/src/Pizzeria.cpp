@@ -133,32 +133,39 @@ void Pizzeria::N_Pedidos_Paso(){
         //Se introdu. en cajas
         while(!colaExpNorte.es_vacia() && i<pasos){
             deExpNorte_a_cajaNorte();
+            i++;
         }
         i=0;
         while(!colaExpEste.es_vacia() && i<pasos){
             deExpEste_a_cajaEste();
+            i++;
         }
         i=0;
         while(!colaExpSur.es_vacia() && i<pasos){
             deExpSur_a_cajaSur();
+            i++;
         }
         i=0;
         while(!colaExpOeste.es_vacia() && i<pasos){
             deExpOeste_a_cajaOeste();
+            i++;
         }
         i=0;
 
         //Colas pizzeria
         while(!colaCocina.es_vacia()&&i<pasos){
             de_cocina_a_Exp();
+            i++;
         }
         i=0;
         while(!colaPedidosEspeciales.es_vacia()&&i<pasos){
             de_prepEsp_a_cocina();
+            i++;
         }
         i=0;
         while(!colaPedidos.es_vacia()&&i<pasos){
             de_recibido_a_cocina_o_prepEsp();
+            i++;
     }
     cout<<"----------------------------------------------------------------------------------------------------"<<endl;
     cout<<"PASOS EN CADA COLA DADOS CORRECTAMENTE"<<endl;
