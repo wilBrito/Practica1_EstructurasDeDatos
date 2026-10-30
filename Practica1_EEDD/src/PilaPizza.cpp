@@ -88,6 +88,7 @@ void PilaPizza::mostrarPilaSimple(){
 
 void PilaPizza::retirarelemento(string id, ColaPizza& cola){
     bool encontrado=false;
+    if(cima){
     NodoPilaPizza *aux = cima;
     NodoPilaPizza *aborrar;
     //Si es el primero
@@ -116,7 +117,7 @@ void PilaPizza::retirarelemento(string id, ColaPizza& cola){
         else{
             aux=aux->siguiente;
         }
-    }
+    }}
     if(encontrado){
         cout<<"----------------------------------------------------------------------------------------------------"<<endl;
         cout<<"PEDIDO RETIRADO CORRECTAMENTE"<<endl;
